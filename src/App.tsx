@@ -27,14 +27,14 @@ function App() {
   };
 
   const onNavigate = (direction: 'next' | 'back') => {
-    if (ifError()) {
-      return false;
-    }
-
     if (direction === 'next') {
+      if (ifError()) {
+        return false;
+      }
+
       if (step <= 3) {
         setStep((step) => step + 1);
-        setComplete((complete) => complete + 1);
+
         return;
       }
     }
@@ -42,7 +42,13 @@ function App() {
   };
 
   useEffect(() => {
-    if (complete < 3) return;
+    if (step > complete) {
+      setComplete((complete) => complete + 1);
+    }
+  }, [step]);
+
+  useEffect(() => {
+    if (complete < 3 || step < 3) return;
     const handler = setTimeout(() => {
       const data = getValues();
       data.subscribe = subscribe;
