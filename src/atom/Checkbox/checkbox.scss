@@ -1,0 +1,22 @@
+.checkbox_label {
+  @apply inline-flex items-center justify-center gap-1;
+
+  input[type='checkbox']:checked {
+    & + .mirror {
+      @apply bg-cyan-500;
+
+      &::after {
+        @apply border-b-white border-r-white;
+      }
+    }
+  }
+
+  .mirror {
+    @apply relative inline-flex h-5 w-5 items-center justify-center border border-cyan-500 hover:cursor-pointer;
+    &::after {
+      @apply absolute top-[1px] h-3 w-2 rotate-45 border-2 border-transparent;
+      content: '';
+      display: inline-block;
+    }
+  }
+}

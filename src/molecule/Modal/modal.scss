@@ -1,0 +1,7 @@
+.modal {
+  @apply fixed flex h-full w-full items-center justify-center bg-[rgba(0,0,0,0.85)];
+}
+
+.onboard_container {
+  @apply rounded-lg bg-white text-black shadow-md dark:bg-gray-900 dark:text-white xxs:w-[calc(100vw*0.9)] xxs:p-2 sm:w-full md:w-[calc(100vw*0.7)] md:p-5 lg:p-10 xl:w-[calc(100vw*0.5)];
+}

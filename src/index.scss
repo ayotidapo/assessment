@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f5f5f5;
+}
+
+h3 {
+  @apply xxs:text-[14px] lg:text-base;
+}
+
+h2 {
+  @apply font-semibold xxs:text-[22px] lg:text-4xl;
+}
+
+.input_wrapper {
+  @apply mb-5 block w-full;
+
+  .input {
+    @apply h-[58px] w-full rounded-md bg-[#f3f3f3] p-2 text-black ring-1 ring-gray-400;
+
+    &:focus {
+      @apply bg-white outline-0 ring-green-300;
+    }
+    &.error {
+      @apply ring-red-400;
+    }
+  }
+}

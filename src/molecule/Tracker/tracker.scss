@@ -1,0 +1,6 @@
+.step__tracker {
+  @apply my-1 block h-1.5 rounded-lg bg-gray-200;
+  &.done {
+    @apply bg-cyan-500;
+  }
+}
