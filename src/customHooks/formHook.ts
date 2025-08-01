@@ -12,6 +12,7 @@ const useFormHook = (fields: IFieldState, step = 1) => {
 
     Object.keys(inputs).forEach((field) => {
       if (validatedInput[field].step === step) {
+        console.log(validatedInput[field].step);
         validatedInput = onValidateInputFunc(inputs, field);
       }
     });

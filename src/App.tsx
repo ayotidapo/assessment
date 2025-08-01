@@ -28,24 +28,19 @@ function App() {
 
   const onNavigate = (direction: 'next' | 'back') => {
     if (direction === 'next') {
+      if (step === complete) return setStep((step) => step + 1);
       if (ifError()) {
         return false;
       }
-
-      if (step <= 3) {
-        setStep((step) => step + 1);
-
-        return;
-      }
+      if (step !== complete) return setComplete((complete) => complete + 1);
+    } else {
+      setStep((step) => step - 1);
     }
-    setStep((step) => step - 1);
   };
 
   useEffect(() => {
-    if (step > complete) {
-      setComplete((complete) => complete + 1);
-    }
-  }, [step]);
+    if (complete > 0) setStep((step) => step + 1);
+  }, [complete]);
 
   useEffect(() => {
     if (complete < 3 || step < 3) return;
@@ -66,7 +61,7 @@ function App() {
   useEffect(() => {
     document.documentElement.classList.toggle('dark');
   }, [theme]);
-
+  console.log(step, complete);
   return (
     <main className="flex h-screen flex-col items-center justify-center bg-[#f5f5f5]">
       {!open && (
