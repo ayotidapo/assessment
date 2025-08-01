@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import Input from './atom/Input';
 import Button from './atom/Button';
-import Select from './atom/Select';
-import Checkbox from './atom/Checkbox';
 import useFormHook from './customHooks/formHook';
 import Tracker from './molecule/Tracker';
 import Modal from './molecule/Modal';
 import { fields, tracks } from './constant';
+import Step1 from './components/Step1';
+import Step2 from './components/Step2';
+import Step3 from './components/Step3';
 import './App.scss';
 
 function App() {
@@ -88,43 +88,29 @@ function App() {
 
             {step === 1 && (
               <>
-                <Input
-                  field={inputs.fullName}
-                  onChange={onInputChange}
-                  onBlur={onInputBlur}
-                />
-                <Input
-                  field={inputs.email}
-                  onChange={onInputChange}
-                  onBlur={onInputBlur}
+                <Step1
+                  inputs={inputs}
+                  onInputChange={onInputChange}
+                  onInputBlur={onInputBlur}
                 />
               </>
             )}
             {step === 2 && (
               <>
-                <Input
-                  field={inputs.userName}
-                  onChange={onInputChange}
-                  onBlur={onInputBlur}
-                />
-                <Input
-                  field={inputs.password}
-                  onChange={onInputChange}
-                  onBlur={onInputBlur}
+                <Step2
+                  inputs={inputs}
+                  onInputChange={onInputChange}
+                  onInputBlur={onInputBlur}
                 />
               </>
             )}
             {step >= 3 && (
               <>
-                <Select
-                  field={inputs.theme}
-                  onChange={onInputChange}
-                  onBlur={onInputBlur}
-                />
-                <Checkbox
-                  name="subscribe"
-                  title="Subscribe to newsletter? "
-                  onChange={onSubscribe}
+                <Step3
+                  inputs={inputs}
+                  onInputChange={onInputChange}
+                  onInputBlur={onInputBlur}
+                  onSubscribe={onSubscribe}
                   checked={subscribe}
                 />
               </>
