@@ -61,7 +61,7 @@ function App() {
   useEffect(() => {
     document.documentElement.classList.toggle('dark');
   }, [theme]);
-  console.log(step, complete);
+
   return (
     <main className="flex h-screen flex-col items-center justify-center bg-[#f5f5f5]">
       {!open && (

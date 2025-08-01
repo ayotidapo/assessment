@@ -13,7 +13,7 @@ const Tracker: React.FC<Props> = (props) => {
   return (
     <div className="md:text-left">
       <h3
-        className={`xxs:hidden md:block ${curStep === num ? 'text-cyan-500' : ''}`}
+        className={`xxs:text-[8px] xs:text-[14px] md:text-base ${curStep === num ? 'text-cyan-500' : 'text-[#5d5d55]'}`}
       >
         {label}
       </h3>
