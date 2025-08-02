@@ -56,7 +56,7 @@ const fields = {
   },
   theme: {
     name: 'theme',
-    value: 'light',
+    value: '',
     placeholder: '',
     required: false,
     error: '',

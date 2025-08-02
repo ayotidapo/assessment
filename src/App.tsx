@@ -13,6 +13,7 @@ function App() {
   const [step, setStep] = useState(1);
   const [complete, setComplete] = useState(0);
   const [open, setOpen] = useState(true);
+
   const { ifError, getValues, resetData, onInputChange, onInputBlur, inputs } =
     useFormHook(fields, step);
 
@@ -59,6 +60,7 @@ function App() {
   }, [complete, theme]);
 
   useEffect(() => {
+    if (!theme) return;
     document.documentElement.classList.toggle('dark');
   }, [theme]);
 
