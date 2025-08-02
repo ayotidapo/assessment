@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Button from './atom/Button';
 import useFormHook from './customHooks/formHook';
-import Tracker from './molecule/Tracker';
+import Tracker from './atom/Tracker';
 import Modal from './molecule/Modal';
 import { fields, tracks } from './constant';
 import Step1 from './components/Step1';
