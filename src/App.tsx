@@ -76,7 +76,7 @@ function App() {
         <div className="onboard_container">
           <form className="bg-white text-black dark:bg-gray-900 dark:text-white">
             <h2 className="mb-10">Complete your registration</h2>
-            <section className="mb-5 grid grid-cols-3 gap-2">
+            <section className="mb-5 grid grid-cols-3 items-end gap-2">
               {tracks.map((item: any, i: number) => (
                 <Tracker
                   key={i}
