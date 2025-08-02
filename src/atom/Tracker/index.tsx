@@ -16,7 +16,7 @@ const Tracker: React.FC<Props> = (props) => {
   return (
     <div className="md:text-left">
       <h3
-        className={`flex items-center gap-1 md:text-xs lg:text-base ${isCurStep || isComplete ? 'text-cyan-500' : 'text-[#5d5d55]'}`}
+        className={`flex items-center gap-1 md:text-xs lg:text-base ${isCurStep || isComplete ? 'text-cyan-500' : 'text-black dark:text-white'}`}
       >
         <span className="xxs:hidden md:block">{label}</span>
         {isComplete && <Check className="h-6 w-6 text-cyan-500" />}

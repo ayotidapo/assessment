@@ -5,7 +5,6 @@ interface Props {
     value: string;
     type: string;
     placeholder?: string;
-    isTouched?: boolean;
     id?: string;
   };
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

@@ -22,7 +22,6 @@ const fields = {
     error: '',
     type: 'text',
     step: 1,
-    isTouched: false,
   },
   email: {
     name: 'email',
@@ -32,7 +31,6 @@ const fields = {
     error: '',
     type: 'email',
     step: 1,
-    isTouched: false,
   },
   userName: {
     name: 'userName',
@@ -42,7 +40,6 @@ const fields = {
     error: '',
     type: 'text',
     step: 2,
-    isTouched: false,
   },
   password: {
     name: 'password',
@@ -52,7 +49,6 @@ const fields = {
     error: '',
     type: 'password',
     step: 2,
-    isTouched: false,
   },
   theme: {
     name: 'theme',
@@ -66,7 +62,6 @@ const fields = {
       { label: 'Dark', value: 'dark' },
     ],
     step: 3,
-    isTouched: false,
   },
 };
 

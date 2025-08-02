@@ -60,8 +60,8 @@ function App() {
   }, [complete, theme]);
 
   useEffect(() => {
-    if (!theme) return;
-    document.documentElement.classList.toggle('dark');
+    if (theme === 'dark') document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
   }, [theme]);
 
   return (
