@@ -11,15 +11,18 @@ interface Props {
 
 const Tracker: React.FC<Props> = (props) => {
   const { complete, curStep, num, label } = props;
+  const isComplete = complete >= num;
+  const isCurStep = curStep === num;
   return (
     <div className="md:text-left">
       <h3
-        className={`flex items-center gap-1 md:text-xs lg:text-base ${curStep === num ? 'text-cyan-500' : 'text-[#5d5d55]'}`}
+        className={`flex items-center gap-1 md:text-xs lg:text-base ${isCurStep || isComplete ? 'text-cyan-500' : 'text-[#5d5d55]'}`}
       >
-        <span className="xxs:hidden md:block">{label}</span> <Check />
+        <span className="xxs:hidden md:block">{label}</span>
+        {isComplete && <Check className="h-6 w-6 text-cyan-500" />}
       </h3>
 
-      <span className={`step__tracker ${complete >= num ? 'done' : ''}`}></span>
+      <span className={`step__tracker ${isComplete ? 'done' : ''}`}></span>
     </div>
   );
 };
